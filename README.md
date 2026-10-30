@@ -32,6 +32,7 @@ PostgreSQL latency are included.
 | `src/pg_experiments.py` | PostgreSQL experiments: loading data, native estimates, forced join orders, cardinality injection, latency-calibrated PR-CP. |
 | `src/report.py` | Prints a readable summary of result files. |
 | `src/summarize.py` | Aggregates result files over seeds into one compact JSON file. |
+| `src/make_figures.py` | Draws the figures of the paper from the output of `summarize.py`. |
 | `scripts/run_example.sh` | Small end-to-end example (about 30 seconds on 4 cores). |
 | `scripts/run_main.sh` | Main configurations of the paper on one machine. |
 | `scripts/prepare_imdb.py`, `scripts/get_job_light.sh` | IMDB data for the JOB and JOB-light experiments. |
@@ -142,6 +143,7 @@ python scripts/prepare_imdb.py      # IMDB tables for JOB (about 1.2 GB download
 bash scripts/get_job_light.sh       # JOB-light queries
 WORKERS=32 bash scripts/run_main.sh # DuckDB experiments, 3 seeds
 python src/summarize.py --dirs results/main --out results/summary.json
+python src/make_figures.py --summary results/summary.json --out Figures
 ```
 
 PostgreSQL experiments:
