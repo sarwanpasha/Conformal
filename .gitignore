@@ -1,0 +1,8 @@
+data/
+results/
+build/
+pg/
+pgdata/
+__pycache__/
+*.pyc
+.venv/
